@@ -1,0 +1,9 @@
+<h2>Recepti</h2>
+<ul class="recepti">
+    <li *ngFor="let recept of recepti">
+        <span class="badge">{{recept.id}}</span> {{recept.name}}
+        <div><li *ngFor="let proizvod of proizvodi">
+            <span class="badge2">{{proizvod.name}}</span>
+        </li></div>
+    </li>
+</ul>
