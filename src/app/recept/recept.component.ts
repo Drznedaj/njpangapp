@@ -12,9 +12,14 @@ export class ReceptComponent implements OnInit {
 
   recepti = RECEPTI;
   proizvodi = PROIZVODI1;
+  selektovanRecept: Recept;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(recept: Recept): void {
+    this.selektovanRecept = recept;
   }
 
 }

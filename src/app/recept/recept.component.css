@@ -1,0 +1,17 @@
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+  }
+  .containsAll{
+      overflow: hidden;
+  }
+  .recepti li{
+    
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+    float: left;
+  }
+  .proizvodContain {
+    float: left;
+}
