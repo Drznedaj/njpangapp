@@ -12,6 +12,6 @@ export class RegisterButtonComponent implements OnInit {
   ngOnInit() {
   }
   onClick() {
-
+    console.log('registrujem se');
   }
 }

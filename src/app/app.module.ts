@@ -8,7 +8,8 @@ import { ReceptComponent } from './recept/recept.component';
 import { ProizvodComponent } from './proizvod/proizvod.component';
 import { RegisterButtonComponent } from './register-button/register-button.component';
 import { LoginButtonComponent } from './login-button/login-button.component';
-import { from } from 'rxjs';
+import { UserManagerComponent } from './user-manager/user-manager.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { from } from 'rxjs';
     ReceptComponent,
     ProizvodComponent,
     RegisterButtonComponent,
-    LoginButtonComponent
+    LoginButtonComponent,
+    UserManagerComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
