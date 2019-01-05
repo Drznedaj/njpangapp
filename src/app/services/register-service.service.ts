@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { User } from './user';
+import { User } from '../user';
 import { Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -11,10 +10,12 @@ const httpOptions = {
   })
 };
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class RegisterServiceService {
 
-  registerUrl = '/korisnik/sign-up';
+  registerUrl = 'api/korisnik/sign-up';
 
   constructor( private http: HttpClient) { }
 
@@ -24,6 +25,7 @@ export class RegisterServiceService {
         catchError(this.handleError)
       );
   }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

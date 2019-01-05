@@ -10,6 +10,7 @@ import { RegisterButtonComponent } from './register-button/register-button.compo
 import { LoginButtonComponent } from './login-button/login-button.component';
 import { UserManagerComponent } from './user-manager/user-manager.component';
 import { UserComponent } from './user/user.component';
+import { RegisterServiceService } from './services/register-service.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { UserComponent } from './user/user.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [RegisterServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

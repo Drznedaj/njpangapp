@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { RegisterServiceService} from '../services/register-service.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-register-button',
@@ -7,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterButtonComponent implements OnInit {
 
-  constructor() { }
+  @Input() userToRegister: User;
+
+  constructor(private registerService: RegisterServiceService) { }
 
   ngOnInit() {
   }
   onClick() {
-    console.log('registrujem se');
+
+    if (this.userToRegister) {
+      console.log('registrujem se');
+      console.log(this.userToRegister);
+      this.registerService.registrujUsera(this.userToRegister).subscribe(user => this.userToRegister);
+    }
   }
 }
