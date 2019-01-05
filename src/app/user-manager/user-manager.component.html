@@ -3,18 +3,18 @@
 </div>
 
 <div *ngIf="currentUser == null">
-    <app-login-button></app-login-button>
-    <app-register-button [(userToRegister)]='user123'></app-register-button>
+    <app-login-button [(userToLogin)]='user'></app-login-button>
+    <app-register-button [(userToRegister)]='user'></app-register-button>
     <div>
         <label>
             Username:
-            <input [(ngModel)]="user123.username" placeholder="username">
+            <input [(ngModel)]="user.username" placeholder="username">
         </label>
     </div>
     <div>
         <label>
             Password:
-            <input [(ngModel)]="user123.password" placeholder="password">
+            <input [(ngModel)]="user.password" placeholder="password">
         </label>
     </div>
 </div>

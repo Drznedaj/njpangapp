@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../user';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login-button',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginButtonComponent implements OnInit {
 
-  constructor() { }
+  @Input() userToLogin: User;
+
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
   }
 
+  onClick() {
+    if (this.userToLogin) {
+      console.log('loginujem');
+      console.log(this.userToLogin);
+      this.loginService.loginujUsera(this.userToLogin).subscribe(user => this.userToLogin);
+    }
+  }
 }

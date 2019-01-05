@@ -8,8 +8,7 @@ import { User } from '../user';
 })
 export class UserManagerComponent implements OnInit {
 
-  user123: User = {
-    id: 0,
+  user: User = {
     username: '',
     password: ''
   };

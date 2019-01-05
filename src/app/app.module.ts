@@ -11,6 +11,7 @@ import { LoginButtonComponent } from './login-button/login-button.component';
 import { UserManagerComponent } from './user-manager/user-manager.component';
 import { UserComponent } from './user/user.component';
 import { RegisterServiceService } from './services/register-service.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { RegisterServiceService } from './services/register-service.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [RegisterServiceService],
+  providers: [RegisterServiceService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
