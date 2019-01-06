@@ -17,13 +17,15 @@ const httpOptions = {
 export class LoginService {
 
   loginUrl = 'api/login';
+  authToken: string;
 
   constructor(private http: HttpClient) { }
 
   public loginujUsera(user: User): Observable<Object> {
     // tslint:disable-next-line:max-line-length
-    this.http.post(this.loginUrl, user, {headers: new HttpHeaders({'Content-Type': 'application/json'}), observe: 'response'}).subscribe(res => console.log(res.headers.getAll('Authorization')));
-    return this.http.post(this.loginUrl, user, httpOptions)
+    this.http.post(this.loginUrl, user, {headers: new HttpHeaders({'Content-Type': 'application/json'}), observe: 'response'}).subscribe(res => this.authToken = res.headers.getAll('Authorization')[0]);
+    console.log(this.authToken);
+    return this.http.post(this.loginUrl, user, {headers: new HttpHeaders({'Content-Type': 'application/json'}), observe: 'response'})
       .pipe(catchError(this.handleError));
   }
   private handleError(error: HttpErrorResponse) {
